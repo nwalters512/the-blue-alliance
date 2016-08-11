@@ -24,4 +24,8 @@ ChatSidebar.propTypes = {
   enabled: PropTypes.bool,
 }
 
+ChatSidebar.defaultProps = {
+  enabled: true
+}
+
 export default ChatSidebar
