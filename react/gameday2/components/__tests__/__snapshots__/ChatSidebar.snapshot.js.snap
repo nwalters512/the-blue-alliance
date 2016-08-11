@@ -1,0 +1,25 @@
+exports[`ChatSidebar snapshot renders correctly 1`] = `
+<div
+  className="chat-sidebar">
+  <iframe
+    frameBorder="0"
+    height="100%"
+    id="chat_embed"
+    scrolling="no"
+    src="http://twitch.tv/chat/embed?channel=tbagameday&popout_chat=true"
+    width="100%" />
+</div>
+`;
+
+exports[`ChatSidebar snapshot renders correctly when hidden 1`] = `
+<div
+  className="chat-sidebar">
+  <iframe
+    frameBorder="0"
+    height="100%"
+    id="chat_embed"
+    scrolling="no"
+    src="http://twitch.tv/chat/embed?channel=tbagameday&popout_chat=true"
+    width="100%" />
+</div>
+`;
