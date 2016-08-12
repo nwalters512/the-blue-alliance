@@ -1,10 +1,7 @@
 import React, { PropTypes } from 'react'
 import classNames from 'classnames'
 
-export default React.createClass({
-  propTypes: {
-    enabled: PropTypes.bool,
-  },
+export default class HashtagSidebar extends React.Component {
   componentDidMount() {
     (function (d, s, id) {
       const fjs = d.getElementsByTagName(s)[0]
@@ -17,7 +14,7 @@ export default React.createClass({
         fjs.parentNode.insertBefore(js, fjs)
       }
     }(document, 'script', 'twitter-wjs'))
-  },
+  }
   render() {
     const classes = classNames({
       hidden: !this.props.enabled,
@@ -30,5 +27,13 @@ export default React.createClass({
         </div>
       </div>
     )
-  },
-})
+  }
+}
+
+HashtagSidebar.propTypes = {
+  enabled: PropTypes.bool,
+}
+
+HashtagSidebar.defaultProps = {
+  enabled: true,
+}
