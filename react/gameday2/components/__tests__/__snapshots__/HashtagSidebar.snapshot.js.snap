@@ -1,0 +1,29 @@
+exports[`HashtagSidebar snapshot renders correctly 1`] = `
+<div
+  className="hashtag-sidebar">
+  <div
+    id="twitter-widget">
+    <a
+      className="twitter-timeline"
+      data-widget-id="406597120632709121"
+      href="https://twitter.com/search?q=%23omgrobots">
+      Tweets about \"#omgrobots\"
+    </a>
+  </div>
+</div>
+`;
+
+exports[`HashtagSidebar snapshot renders correctly when hidden 1`] = `
+<div
+  className="hashtag-sidebar">
+  <div
+    id="twitter-widget">
+    <a
+      className="twitter-timeline"
+      data-widget-id="406597120632709121"
+      href="https://twitter.com/search?q=%23omgrobots">
+      Tweets about \"#omgrobots\"
+    </a>
+  </div>
+</div>
+`;
