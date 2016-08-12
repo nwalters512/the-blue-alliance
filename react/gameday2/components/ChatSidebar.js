@@ -25,7 +25,7 @@ ChatSidebar.propTypes = {
 }
 
 ChatSidebar.defaultProps = {
-  enabled: true
+  enabled: true,
 }
 
 export default ChatSidebar
