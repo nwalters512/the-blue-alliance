@@ -1,0 +1,8 @@
+exports[`EmbedTwitch snapshot renders correctly 1`] = `
+<iframe
+  frameBorder="0"
+  height="100%"
+  scrolling="no"
+  src="https://player.twitch.tv/?channel=test"
+  width="100%" />
+`;
