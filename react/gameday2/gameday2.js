@@ -1,5 +1,7 @@
 import 'babel-polyfill'
 import React from 'react'
+import injectTapEventPlugin from 'react-tap-event-plugin'
+import MuiThemeProvider from 'material-ui/styles/MuiThemeProvider'
 import { Provider } from 'react-redux'
 import thunk from 'redux-thunk'
 import { createStore, applyMiddleware, compose } from 'redux'
@@ -10,6 +12,9 @@ import gamedayReducer from './reducers'
 import { setWebcastsRaw, setLayout, addWebcastAtLocation } from './actions'
 import { MAX_SUPPORTED_VIEWS } from './constants/LayoutConstants'
 
+// Needed for Material-UI
+injectTapEventPlugin();
+
 const webcastData = $.parseJSON($('#webcasts_json').text())
 
 const store = createStore(gamedayReducer, compose(
@@ -19,7 +24,9 @@ const store = createStore(gamedayReducer, compose(
 
 ReactDOM.render(
   <Provider store={store}>
-    <GamedayFrame />
+    <MuiThemeProvider>
+      <GamedayFrame />
+    </MuiThemeProvider>
   </Provider>,
   document.getElementById('content')
 )

@@ -1,4 +1,9 @@
 import React, { PropTypes } from 'react'
+import IconButton from 'material-ui/IconButton'
+import {Toolbar, ToolbarGroup, ToolbarTitle} from 'material-ui/Toolbar'
+import VideocamIcon from 'material-ui/svg-icons/av/videocam'
+import CompareArrowsIcon from 'material-ui/svg-icons/action/compare-arrows'
+import CloseIcon from 'material-ui/svg-icons/navigation/close'
 import { Tooltip, OverlayTrigger } from 'react-bootstrap'
 import classNames from 'classnames'
 import WebcastSelectionPanel from './WebcastSelectionPanel'
@@ -64,9 +69,15 @@ export default React.createClass({
       const closeTooltip = (<Tooltip id="closeTooltip">Close webcast</Tooltip>)
       const changeWebcastTooltip = (<Tooltip id="changeWebcastTooltip">Change webcast</Tooltip>)
       const swapWebcastTooltip = (<Tooltip id="swapWebcastTooltip">Swap webcast position</Tooltip>)
+
+      const toolbarIconStyle = {
+        padding: '0px',
+        width: '40px',
+        height: '40px',
+      }
       return (
         <div className={classes}>
-          <div className="panel-heading">
+          {/*<div className="panel-heading">
             <h3 className="panel-title">{this.props.webcast.name}</h3>
             <div className="overlay-button-container">
               <OverlayTrigger placement="bottom" overlay={swapWebcastTooltip}>
@@ -79,7 +90,47 @@ export default React.createClass({
                 <i className="material-icons overlay-button button-close" onClick={this.onCloseClicked}>close</i>
               </OverlayTrigger>
             </div>
-          </div>
+          </div>*/}
+          <Toolbar
+            style={{
+              height: '40px',
+            }}
+          >
+            <ToolbarGroup firstChild={true} >
+              <ToolbarTitle
+                text={this.props.webcast.name}
+                style={{
+                  lineHeight: '40px',
+                }}
+              />
+            </ToolbarGroup>
+            <ToolbarGroup>
+              <IconButton
+                onClick={this.showSwapPanel}
+                touch={true}
+                tooltip="Swap webcast position"
+                style={toolbarIconStyle}
+              >
+                <CompareArrowsIcon />
+              </IconButton>
+              <IconButton
+                onClick={this.showWebcastSelectionPanel}
+                touch={true}
+                tooltip="Change webcast"
+                style={toolbarIconStyle}
+              >
+                <VideocamIcon />
+              </IconButton>
+              <IconButton
+                onClick={this.onCloseClicked}
+                touch={true}
+                tooltip="Close webcast"
+                style={toolbarIconStyle}
+              >
+                <CloseIcon />
+              </IconButton>
+            </ToolbarGroup>
+          </Toolbar>
           <WebcastSelectionPanel
             webcasts={this.props.webcasts}
             webcastsById={this.props.webcastsById}
