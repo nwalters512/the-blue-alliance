@@ -6,14 +6,6 @@ const SettingsDropdown = (props) => (
     <a href="#" className="dropdown-toggle navbar-icon" data-toggle="dropdown"><i className="material-icons">settings</i></a>
     <ul className="dropdown-menu">
       <BootstrapNavDropdownListItem handleClick={props.resetWebcasts}>Reset Layout</BootstrapNavDropdownListItem>
-      <li className="divider" />
-      <BootstrapNavDropdownListItem
-        data_toggle="modal"
-        data_target="#followingTeamsModal"
-      >Follow Teams</BootstrapNavDropdownListItem>
-      <li className="divider" />
-      <BootstrapNavDropdownListItem>Debug Menu</BootstrapNavDropdownListItem>
-      <BootstrapNavDropdownListItem>TODO Show Beeper</BootstrapNavDropdownListItem>
     </ul>
   </li>
 )
