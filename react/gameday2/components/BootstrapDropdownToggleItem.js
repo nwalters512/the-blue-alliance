@@ -24,7 +24,7 @@ export default React.createClass({
     })
     return (
       <NativeListener onClick={this.handleClick}>
-        <li><button href={'#'} onClick={this.handleClick}>{this.props.children} <span className={checkmarkClasses} /></button></li>
+        <li><a href={'#'} onClick={this.handleClick}>{this.props.children} <span className={checkmarkClasses} /></a></li>
       </NativeListener>
     )
   },
