@@ -45,7 +45,8 @@ function compile(watch) {
     cache: {},
     packageCache: {},
   }).transform('babelify', {
-    presets: ['es2015', 'react']
+    presets: ['es2015', 'react', 'stage-2'],
+    plugins: ['transform-class-properties'],
   });
 
   function rebundle() {
