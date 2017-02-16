@@ -1,3 +1,6 @@
+// How tall the bottom bar of each video cell is
+export const BOTTOM_BAR_HEIGHT = 48
+
 // How many layouts are defined
 // Valid layout IDs are in the range [0, NUM_LAYOUTS - 1]
 export const NUM_LAYOUTS = 9

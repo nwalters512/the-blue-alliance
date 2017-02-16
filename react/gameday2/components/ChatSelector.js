@@ -54,10 +54,10 @@ export default class ChatSelector extends React.Component {
     }
 
     return (
-      <ReactTransitionGroup component="div">
+      <ReactTransitionGroup component='div'>
         {this.props.open &&
           <AnimatableContainer
-            key="overlay"
+            key='overlay'
             style={overlayStyle}
             onTouchTap={() => this.props.onRequestClose()}
             beginStyle={{
@@ -70,7 +70,7 @@ export default class ChatSelector extends React.Component {
         }
         {this.props.open &&
           <AnimatableContainer
-            key="selector"
+            key='selector'
             style={listStyle}
             beginStyle={{
               opacity: 0,

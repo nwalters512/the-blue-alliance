@@ -3,11 +3,11 @@ import RaisedButton from 'material-ui/RaisedButton'
 import EmbedUstream from './EmbedUstream'
 import EmbedYoutube from './EmbedYoutube'
 import EmbedTwitch from './EmbedTwitch'
-import VideoCellToolbarContainer from '../containers/VideoCellToolbarContainer'
+import VideoCellBottomBar from './VideoCellBottomBar'
 import WebcastSelectionOverlayDialogContainer from '../containers/WebcastSelectionOverlayDialogContainer'
 import SwapPositionOverlayDialogContainer from '../containers/SwapPositionOverlayDialogContainer'
 import { webcastPropType } from '../utils/webcastUtils'
-import { LAYOUT_STYLES } from '../constants/LayoutConstants'
+import { LAYOUT_STYLES, BOTTOM_BAR_HEIGHT } from '../constants/LayoutConstants'
 
 export default class VideoCell extends React.Component {
   static propTypes = {
@@ -25,6 +25,7 @@ export default class VideoCell extends React.Component {
     this.state = {
       webcastSelectionDialogOpen: false,
       swapPositionDialogOpen: false,
+      mouseOver: false,
     }
   }
 
@@ -49,10 +50,18 @@ export default class VideoCell extends React.Component {
     this.onRequestCloseWebcastSelectionDialog()
   }
 
+  onMouseOver() {
+    this.setState({ mouseOver: true})
+  }
+
+  onMouseOut() {
+    this.setState({ mouseOver: false })
+  }
+
   render() {
     const cellStyle = Object.assign({}, LAYOUT_STYLES[this.props.layoutId][this.props.position], {
-      paddingBottom: '48px',
       outline: '#fff solid 1px',
+      paddingBottom: BOTTOM_BAR_HEIGHT,
     })
 
     if (this.props.webcast) {
@@ -72,21 +81,17 @@ export default class VideoCell extends React.Component {
           break
       }
 
-      const toolbarStyle = {
-        position: 'absolute',
-        bottom: 0,
-        width: '100%',
-        height: '48px',
-      }
-
       return (
         <div
           style={cellStyle}
+          onMouseEnter={() => this.onMouseOver()}
+          onMouseLeave={() => this.onMouseOut()}
         >
           {cellEmbed}
-          <VideoCellToolbarContainer
-            style={toolbarStyle}
+          <VideoCellBottomBar
+            height={BOTTOM_BAR_HEIGHT}
             webcast={this.props.webcast}
+            mouseOver={this.state.mouseOver}
             onRequestOpenWebcastSelectionDialog={() => this.onRequestOpenWebcastSelectionDialog()}
             onRequestOpenSwapPositionDialog={() => this.onRequestOpenSwapPositionDialog()}
           />
