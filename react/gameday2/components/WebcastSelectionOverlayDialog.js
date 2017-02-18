@@ -4,7 +4,7 @@ import FlatButton from 'material-ui/FlatButton'
 import { List, ListItem } from 'material-ui/List'
 import EventListener from 'react-event-listener'
 import WebcastSelectionOverlayDialogItem from './WebcastSelectionOverlayDialogItem'
-import { webcastPropType } from '../utils/webcastUtils'
+import { webcastPropType } from '../utils/PropTypes'
 
 export default class VideoCellOverlayDialog extends React.Component {
 

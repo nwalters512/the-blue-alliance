@@ -6,7 +6,7 @@ import EmbedTwitch from './EmbedTwitch'
 import VideoCellBottomBar from './VideoCellBottomBar'
 import WebcastSelectionOverlayDialogContainer from '../containers/WebcastSelectionOverlayDialogContainer'
 import SwapPositionOverlayDialogContainer from '../containers/SwapPositionOverlayDialogContainer'
-import { webcastPropType } from '../utils/webcastUtils'
+import { webcastPropType } from '../utils/PropTypes'
 import { LAYOUT_STYLES, BOTTOM_BAR_HEIGHT } from '../constants/LayoutConstants'
 
 export default class VideoCell extends React.Component {

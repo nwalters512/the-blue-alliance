@@ -1,7 +1,7 @@
 import React, { PropTypes } from 'react'
 import VideoCell from './VideoCell'
 import { getNumViewsForLayout } from '../utils/layoutUtils'
-import { webcastPropType } from '../utils/webcastUtils'
+import { webcastPropType } from '../utils/PropTypes'
 
 export default class VideoGrid extends React.Component {
   static propTypes = {
